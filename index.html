@@ -3,7 +3,9 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>附近美食地圖</title>
+  <title>Feed Me</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Satisfy&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
   <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
@@ -682,9 +684,21 @@
       <div className="app">
         <div className="header">
           <div className="header-top">
-            <div>
-              <div className="header-title">附近美食地圖</div>
-              <div className="header-sub">NEARBY EATS · 方圓探索</div>
+            <div style={{display:"flex",alignItems:"center",gap:16}}>
+              <svg width="44" height="44" viewBox="0 0 80 80" style={{flexShrink:0}}>
+                <circle cx="40" cy="40" r="38" fill="#1e9fdf"/>
+                <path d="M40 12 C28 12 20 21 20 31 C20 44 40 64 40 64 C40 64 60 44 60 31 C60 21 52 12 40 12Z" fill="white"/>
+                <path d="M27 30 Q27 42 40 42 Q53 42 53 30" stroke="#1e9fdf" strokeWidth="3" fill="none" strokeLinecap="round"/>
+                <line x1="27" y1="30" x2="53" y2="30" stroke="#1e9fdf" strokeWidth="3" strokeLinecap="round"/>
+                <line x1="40" y1="42" x2="40" y2="46" stroke="#1e9fdf" strokeWidth="2.5" strokeLinecap="round"/>
+                <path d="M34 25 Q36 22 34 19" stroke="#1e9fdf" strokeWidth="2" fill="none" strokeLinecap="round"/>
+                <path d="M40 24 Q42 21 40 18" stroke="#1e9fdf" strokeWidth="2" fill="none" strokeLinecap="round"/>
+                <path d="M46 25 Q48 22 46 19" stroke="#1e9fdf" strokeWidth="2" fill="none" strokeLinecap="round"/>
+              </svg>
+              <div>
+                <div style={{fontFamily:"'Satisfy', cursive", fontSize:28, color:"#1a2a3a", lineHeight:1.1}}>Feed Me</div>
+                <div className="header-sub" style={{letterSpacing:"2px", marginTop:3}}>找吃的</div>
+              </div>
             </div>
             <span className={`source-badge ${isGoogleMode?"src-google":"src-osm"}`}>
               {isGoogleMode?"● Google 資料":"● OpenStreetMap"}
