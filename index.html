@@ -908,4 +908,25 @@
                     </div>
                     {todayHours&&<div className="card-hours">🕐 {todayHours}</div>}
                     <div className="card-bottom">
-                      <span className="card-dist">📍 {Math
+                      <span className="card-dist">📍 {Math.round(p.distance)} m</span>
+                      <a className="btn-map"
+                        href={p.placeId
+                          ?`https://www.google.com/maps/place/?q=place_id:${p.placeId}`
+                          :`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(p.name)}@${p.lat},${p.lon}`}
+                        target="_blank" rel="noopener noreferrer"
+                        onClick={e=>{e.stopPropagation();window.open(p.placeId?`https://www.google.com/maps/place/?q=place_id:${p.placeId}`:`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(p.name)}@${p.lat},${p.lon}`,'_blank');}}>map</a>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          </>
+        )}
+      </div>
+    </>);
+  }
+
+  ReactDOM.createRoot(document.getElementById("root")).render(<App/>);
+</script>
+</body>
+</html>
