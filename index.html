@@ -65,6 +65,7 @@
   const FONT = "'Microsoft JhengHei','微軟正黑體','PingFang TC','蘋方-繁',sans-serif";
   const MIN_RATING = 3.8;
   const PLACES_API = "https://places.googleapis.com/v1/places:searchNearby";
+  const TEXT_SEARCH_API = "https://places.googleapis.com/v1/places:searchText";
   const FIELDS = [
     "places.id","places.displayName","places.rating","places.userRatingCount",
     "places.types","places.formattedAddress","places.location",
@@ -261,7 +262,22 @@
     );
   }
 
-  /* ══ App ══════════════════════════════════════════════════════ */
+
+  async function searchTextGoogle(apiKey, keyword, lat, lon, rad){
+    const body={
+      textQuery: keyword,
+      maxResultCount: 20,
+      locationBias:{circle:{center:{latitude:lat,longitude:lon},radius:rad}},
+    };
+    const res=await fetch(TEXT_SEARCH_API,{
+      method:"POST",
+      headers:{"Content-Type":"application/json","X-Goog-Api-Key":apiKey,"X-Goog-FieldMask":FIELDS},
+      body:JSON.stringify(body),
+    });
+    return res.json();
+  }
+
+    /* ══ App ══════════════════════════════════════════════════════ */
   function App(){
     const [location,setLocation]         = useState(null);
     const [locLabel,setLocLabel]         = useState(null);
@@ -341,15 +357,42 @@
       }
     },[log]);
 
+        const fetchGoogleTextPlaces = useCallback(async(lat,lon,rad,key,keyword,token)=>{
+      const data = await searchTextGoogle(key, keyword, lat, lon, rad);
+      if(token.cancelled) return;
+      log(`textSearch 回傳：${JSON.stringify(data).slice(0,200)}`);
+      if(data.error){ setError(`關鍵字搜尋錯誤：${data.error.message}`); setLoading(false); return; }
+      const toItem = p => ({
+        id:p.id, placeId:p.id,
+        name:p.displayName?.text||"(無名稱)",
+        typeLabel:getGoogleTypeLabel(p.types||[]),
+        address:p.formattedAddress||"",
+        lat:p.location.latitude, lon:p.location.longitude,
+        distance:haversine(lat,lon,p.location.latitude,p.location.longitude),
+        rating:p.rating??null, ratingCount:p.userRatingCount??null,
+        regularOpeningHours:p.regularOpeningHours||null,
+        currentOpeningHours:p.currentOpeningHours||null,
+        source:"google",
+      });
+      const results=(data.places||[]).map(toItem);
+      log(`關鍵字搜尋：${results.length} 筆`);
+      setPlaces(results); setLoading(false);
+    },[log]);
+
     /* ── Main fetch ── */
-    const fetchPlaces = useCallback(async(lat, lon, types, rad, key)=>{
+    const fetchPlaces = useCallback(async(lat, lon, types, rad, key, keyword)=>{
       cancelRef.current.cancelled=true;
       const token={cancelled:false}; cancelRef.current=token;
       setLoading(true); setError(null); setPlaces([]); setBgStatus(null); setDebugLog([]);
       try{
         if(key){
           log("使用 Google Places API (New)");
-          await fetchGooglePlaces(lat,lon,types,rad,key,token);
+          if(keyword){
+            log(`關鍵字模式：「${keyword}」`);
+            await fetchGoogleTextPlaces(lat,lon,rad,key,keyword,token);
+          } else {
+            await fetchGooglePlaces(lat,lon,types,rad,key,token);
+          }
         } else {
           log("使用 OpenStreetMap 資料來源");
           const q=OSM_QUERY_MAP["all"];
@@ -406,7 +449,7 @@
           const la=r.geometry.location.lat, lo=r.geometry.location.lng;
           const label=r.address_components?.[0]?.long_name||r.formatted_address.split(",")[0];
           setLocation({lat:la,lon:lo}); setLocLabel(label);
-          setGeocoding(false); fetchPlaces(la,lo,Array.from(selectedTypes),radius,apiKey);
+          setGeocoding(false); fetchPlaces(la,lo,Array.from(selectedTypes),radius,apiKey,searchText.trim());
         } else {
           const res=await fetch(
             `https://nominatim.openstreetmap.org/search?format=json&q=${encodeURIComponent(manualAddr)}&countrycodes=tw&limit=1`,
@@ -416,7 +459,7 @@
           if(!data.length){ setError("找不到此地址，建議輸入 Google API 金鑰以提升定位精準度。"); setGeocoding(false); return; }
           const la=parseFloat(data[0].lat),lo=parseFloat(data[0].lon);
           setLocation({lat:la,lon:lo}); setLocLabel(data[0].display_name.split(",")[0]);
-          setGeocoding(false); fetchPlaces(la,lo,Array.from(selectedTypes),radius,apiKey);
+          setGeocoding(false); fetchPlaces(la,lo,Array.from(selectedTypes),radius,apiKey,searchText.trim());
         }
       }catch(e){ setGeocoding(false); setError("地址查詢失敗："+e.message); }
     };
@@ -503,7 +546,7 @@
       setLocLabel(mpLabel||'地圖選點');
       setMapOpen(false);
       setTypeOpen(false);
-      fetchPlaces(mpLL.lat,mpLL.lon,Array.from(selectedTypes),radius,apiKey);
+      fetchPlaces(mpLL.lat,mpLL.lon,Array.from(selectedTypes),radius,apiKey,searchText.trim());
     };
     const typesArray = useCallback(()=>Array.from(selectedTypes),[selectedTypes]);
     const handleTypeToggle = (id)=>{
@@ -515,7 +558,7 @@
     };
     const handleSelectAll  = ()=>setSelectedTypes(new Set(ALL_TYPES));
     const handleClearAll   = ()=>setSelectedTypes(new Set());
-    const handleRadiusChange = r=>{ setRadius(r); if(location) fetchPlaces(location.lat,location.lon,Array.from(selectedTypes),r,apiKey); };
+    const handleRadiusChange = r=>{ setRadius(r); if(location) fetchPlaces(location.lat,location.lon,Array.from(selectedTypes),r,apiKey,searchText.trim()); };
     const handleConfirmKey = ()=>{
       const k=apiKeyInput.trim();
       setApiKey(k);
@@ -529,7 +572,7 @@
       localStorage.removeItem('gmaps_api_key');
       setShowKeyInput(false);
     };
-    const handleSearch = ()=>{ if(location){ setTypeOpen(false); fetchPlaces(location.lat,location.lon,Array.from(selectedTypes),radius,apiKey); } };
+    const handleSearch = ()=>{ if(location){ setTypeOpen(false); fetchPlaces(location.lat,location.lon,Array.from(selectedTypes),radius,apiKey,searchText.trim()); } };
 
     /* ── Filter & sort ── */
     const filtered = useMemo(()=>{
@@ -537,10 +580,10 @@
         .filter(p=>{
           // Rating filter (Google mode only)
           if(isGoogleMode && p.rating!==null && p.rating < MIN_RATING) return false;
-          // Text search
-          if(searchText && !p.name.toLowerCase().includes(searchText.toLowerCase()) &&
-             !(p.typeLabel&&p.typeLabel.includes(searchText)) &&
-             !(p.cuisine&&p.cuisine.includes(searchText))) return false;
+          // Distance filter for keyword mode (locationBias is not strict)
+          if(searchText.trim() && p.distance > radius) return false;
+          // Text search filter only applies in type mode (keyword mode fetches directly)
+          if(!searchText.trim() && false) return false; // placeholder
           // Time filter (only in Google mode)
           // "只顯示當日營業" — check if open on selected date (any hour)
           if(isGoogleMode && timeFilter.showOpen){
@@ -792,8 +835,8 @@
             {typeOpen&&(<>
               <div className="type-selector-header">
                 <span className="row-label">類型篩選</span>
-                <button className="type-ctrl-btn" onClick={handleSelectAll}>全選</button>
-                <button className="type-ctrl-btn" onClick={handleClearAll}>清除</button>
+                <button className="type-ctrl-btn" style={{opacity:searchText?0.4:1,pointerEvents:searchText?"none":"auto"}} onClick={handleSelectAll}>全選</button>
+                <button className="type-ctrl-btn" style={{opacity:searchText?0.4:1,pointerEvents:searchText?"none":"auto"}} onClick={handleClearAll}>清除</button>
                 <span className="type-count">{selectedTypes.size}/{ALL_TYPES.length}</span>
               </div>
               {TYPE_GROUPS.map(g=>(
@@ -802,7 +845,7 @@
                   <div className="type-chips">
                     {g.items.map(item=>(
                       <button key={item.id}
-                        className={`type-chip ${selectedTypes.has(item.id)?"type-chip-on":""}`}
+                        className={`type-chip ${selectedTypes.has(item.id)?"type-chip-on":""}`} style={{opacity:searchText?0.4:1,pointerEvents:searchText?"none":"auto"}}
                         onClick={()=>handleTypeToggle(item.id)}>
                         {item.label}
                       </button>
@@ -810,6 +853,15 @@
                   </div>
                 </div>
               ))}
+              {/* Keyword search chip */}
+              <div style={{padding:"8px 10px 6px",borderTop:"1px solid var(--border)",marginTop:4,display:"flex",alignItems:"center",gap:8}}>
+                <span style={{fontSize:13,color:"var(--muted)",fontWeight:500,flexShrink:0}}>or</span>
+                <div style={{flex:1,display:"flex",alignItems:"center",background:"#fff",border:"1px solid",borderColor:searchText?"var(--blue)":"var(--border)",borderRadius:18,padding:"4px 12px",gap:6}}>
+                  <span style={{fontSize:12,color:"var(--muted)"}}>🔍</span>
+                  <input style={{flex:1,border:"none",outline:"none",fontSize:12,color:"var(--text)",background:"none"}} placeholder="關鍵字，例：鹹酥雞、麵、滷味…" value={searchText} onChange={e=>setSearchText(e.target.value)}/>
+                  {searchText&&<button style={{border:"none",background:"none",cursor:"pointer",color:"var(--muted)",fontSize:14,lineHeight:1,padding:0}} onClick={()=>setSearchText("")}>×</button>}
+                </div>
+              </div>
             </>)}
           </div>
 
