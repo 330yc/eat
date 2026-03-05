@@ -864,21 +864,27 @@
                 </svg>}
               </button>
             </div>
+            {/* Map toggle */}
+            <button className="map-toggle-btn" onClick={()=>{ setMapOpen(v=>{ const next=!v; if(next) setTimeout(()=>{ if(mapRef.current) mapRef.current.invalidateSize(); },50); return next; }); }}>
+              {mapOpen?"▲ 收合地圖":"▼ 展開地圖"}
+            </button>
             {/* Map */}
-            <div className="map-canvas-wrap">
-              <div ref={mapDiv} className="map-canvas"></div>
-              <button className="gps-fab" onClick={()=>handleLocate(false)} disabled={locating} title="重新定位">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
-                  <path d="M21 3L3 10l7 3.5L13.5 21 21 3z" fill="#4285F4"/>
-                  <path d="M21 3L10 13.5 13.5 21 21 3z" fill="#aec8f8"/>
-                </svg>
+            <div style={{display:mapOpen?"flex":"none",flexDirection:"column",gap:6}}>
+              <div className="map-canvas-wrap">
+                <div ref={mapDiv} className="map-canvas"></div>
+                <button className="gps-fab" onClick={()=>handleLocate(false)} disabled={locating} title="重新定位">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+                    <path d="M21 3L3 10l7 3.5L13.5 21 21 3z" fill="#4285F4"/>
+                    <path d="M21 3L10 13.5 13.5 21 21 3z" fill="#aec8f8"/>
+                  </svg>
+                </button>
+              </div>
+              {/* Confirm / re-search */}
+              <button className="locate-btn" style={{fontSize:13,padding:"10px",letterSpacing:"1px"}}
+                onClick={mpConfirm} disabled={!mpLL||loading}>
+                {loading?"搜尋中…":location?"🔍 套用條件重新搜尋":"✓ 確認位置並開始搜尋"}
               </button>
             </div>
-            {/* Confirm / re-search */}
-            <button className="locate-btn" style={{fontSize:13,padding:"10px",letterSpacing:"1px",marginTop:4}}
-              onClick={mpConfirm} disabled={!mpLL||loading}>
-              {loading?"搜尋中…":location?"🔍 套用條件重新搜尋":"✓ 確認位置並開始搜尋"}
-            </button>
           </div>
 
           {/* Sort + loc badge */}
