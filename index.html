@@ -1,0 +1,1032 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Feed Me</title>
+  <link rel="apple-touch-icon" href="data:image/png;base64,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">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA4MCA4MCI+PGNpcmNsZSBjeD0iNDAiIGN5PSI0MCIgcj0iMzgiIGZpbGw9IiMxZTlmZGYiLz48cGF0aCBkPSJNNDAgMTIgQzI4IDEyIDIwIDIxIDIwIDMxIEMyMCA0NCA0MCA2NCA0MCA2NCBDNDAgNjQgNjAgNDQgNjAgMzEgQzYwIDIxIDUyIDEyIDQwIDEyWiIgZmlsbD0id2hpdGUiLz48cGF0aCBkPSJNMjcgMzAgUTI3IDQyIDQwIDQyIFE1MyA0MiA1MyAzMCIgc3Ryb2tlPSIjMWU5ZmRmIiBzdHJva2Utd2lkdGg9IjMiIGZpbGw9Im5vbmUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPjxsaW5lIHgxPSIyNyIgeTE9IjMwIiB4Mj0iNTMiIHkyPSIzMCIgc3Ryb2tlPSIjMWU5ZmRmIiBzdHJva2Utd2lkdGg9IjMiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPjxsaW5lIHgxPSI0MCIgeTE9IjQyIiB4Mj0iNDAiIHkyPSI0NiIgc3Ryb2tlPSIjMWU5ZmRmIiBzdHJva2Utd2lkdGg9IjIuNSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+PHBhdGggZD0iTTM0IDI1IFEzNiAyMiAzNCAxOSIgc3Ryb2tlPSIjMWU5ZmRmIiBzdHJva2Utd2lkdGg9IjIiIGZpbGw9Im5vbmUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPjxwYXRoIGQ9Ik00MCAyNCBRNDIgMjEgNDAgMTgiIHN0cm9rZT0iIzFlOWZkZiIgc3Ryb2tlLXdpZHRoPSIyIiBmaWxsPSJub25lIiBzdHJva2UtbGluZWNhcD0icm91bmQiLz48cGF0aCBkPSJNNDYgMjUgUTQ4IDIyIDQ2IDE5IiBzdHJva2U9IiMxZTlmZGYiIHN0cm9rZS13aWR0aD0iMiIgZmlsbD0ibm9uZSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+PC9zdmc+">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <style>* { box-sizing:border-box; margin:0; padding:0; } body { background:#1a0f0a; }</style>
+
+  <script>
+    (function(){
+      const svgFavicon = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80">
+        <circle cx="40" cy="40" r="38" fill="#1e9fdf"/>
+        <path d="M40 12 C28 12 20 21 20 31 C20 44 40 64 40 64 C40 64 60 44 60 31 C60 21 52 12 40 12Z" fill="white"/>
+        <path d="M27 30 Q27 42 40 42 Q53 42 53 30" stroke="#1e9fdf" stroke-width="3" fill="none" stroke-linecap="round"/>
+        <line x1="27" y1="30" x2="53" y2="30" stroke="#1e9fdf" stroke-width="3" stroke-linecap="round"/>
+        <line x1="40" y1="42" x2="40" y2="46" stroke="#1e9fdf" stroke-width="2.5" stroke-linecap="round"/>
+        <path d="M34 25 Q36 22 34 19" stroke="#1e9fdf" stroke-width="2" fill="none" stroke-linecap="round"/>
+        <path d="M40 24 Q42 21 40 18" stroke="#1e9fdf" stroke-width="2" fill="none" stroke-linecap="round"/>
+        <path d="M46 25 Q48 22 46 19" stroke="#1e9fdf" stroke-width="2" fill="none" stroke-linecap="round"/>
+      </svg>`;
+      const svgIcon = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80">
+        <rect width="80" height="80" fill="#1e9fdf"/>
+        <circle cx="40" cy="40" r="38" fill="#1e9fdf"/>
+        <path d="M40 12 C28 12 20 21 20 31 C20 44 40 64 40 64 C40 64 60 44 60 31 C60 21 52 12 40 12Z" fill="white"/>
+        <path d="M27 30 Q27 42 40 42 Q53 42 53 30" stroke="#1e9fdf" stroke-width="3" fill="none" stroke-linecap="round"/>
+        <line x1="27" y1="30" x2="53" y2="30" stroke="#1e9fdf" stroke-width="3" stroke-linecap="round"/>
+        <line x1="40" y1="42" x2="40" y2="46" stroke="#1e9fdf" stroke-width="2.5" stroke-linecap="round"/>
+        <path d="M34 25 Q36 22 34 19" stroke="#1e9fdf" stroke-width="2" fill="none" stroke-linecap="round"/>
+        <path d="M40 24 Q42 21 40 18" stroke="#1e9fdf" stroke-width="2" fill="none" stroke-linecap="round"/>
+        <path d="M46 25 Q48 22 46 19" stroke="#1e9fdf" stroke-width="2" fill="none" stroke-linecap="round"/>
+      </svg>`;
+      const sizes = [{rel:'icon',size:32,src:svgFavicon},{rel:'apple-touch-icon',size:180,src:svgIcon}];
+      sizes.forEach(({rel,size,src})=>{
+        const img = new Image();
+        const blob = new Blob([src],{type:'image/svg+xml'});
+        const url = URL.createObjectURL(blob);
+        img.onload = ()=>{
+          const c = document.createElement('canvas');
+          c.width = c.height = size;
+          const ctx = c.getContext('2d');
+          ctx.drawImage(img,0,0,size,size);
+          URL.revokeObjectURL(url);
+          const link = document.querySelector(`link[rel="${rel}"]`);
+          if(link) link.href = c.toDataURL('image/png');
+        };
+        img.src = url;
+      });
+    })();
+  </script>
+</head>
+<body>
+<div id="root"></div>
+<script type="text/babel">
+  const { useState, useRef, useEffect, useCallback, useMemo } = React;
+
+  const FONT = "'Microsoft JhengHei','微軟正黑體','PingFang TC','蘋方-繁',sans-serif";
+  const MIN_RATING = 3.8;
+  const PLACES_API = "https://places.googleapis.com/v1/places:searchNearby";
+  const TEXT_SEARCH_API = "https://places.googleapis.com/v1/places:searchText";
+  const FIELDS = [
+    "places.id","places.displayName","places.rating","places.userRatingCount",
+    "places.types","places.formattedAddress","places.location",
+    "places.regularOpeningHours","places.currentOpeningHours",
+  ].join(",");
+
+  /* ── Meal period definitions (start/end in minutes from midnight) ── */
+  const MEAL_PERIODS = [
+    { id:"breakfast", label:"早餐", icon:"🌅", start: 6*60,  end: 10*60 },
+    { id:"lunch",     label:"午餐", icon:"☀️", start:11*60,  end: 14*60 },
+    { id:"teatime",   label:"下午茶",icon:"🍵", start:14*60,  end: 17*60 },
+    { id:"dinner",    label:"晚上", icon:"🌙", start:17*60,  end: 21*60 },
+    { id:"latenight", label:"消夜", icon:"🌃", start:21*60,  end: 26*60 }, // 26:00 = 02:00 next day
+  ];
+
+  /* ── Check if a place is open during a given day+period ──
+     periods: Google regularOpeningHours.periods[]
+     Each period: { open:{day,hour,minute}, close:{day,hour,minute} }
+     day: 0=Sun … 6=Sat
+  ── */
+  function isOpenDuringPeriod(periods, dayOfWeek, periodStart, periodEnd){
+    if(!periods?.length) return null; // unknown
+    for(const p of periods){
+      const openDay  = p.open?.day  ?? -1;
+      const openMin  = (p.open?.hour  ?? 0)*60 + (p.open?.minute  ?? 0);
+      const closeDay = p.close?.day ?? openDay;
+      const closeMin = (p.close?.hour ?? 23)*60 + (p.close?.minute ?? 59);
+
+      // Normalize to handle overnight periods (e.g. open Mon 22:00 close Tue 02:00)
+      let effectiveClose = closeMin;
+      if(closeDay !== openDay) effectiveClose += 24*60; // add a day
+
+      if(openDay !== dayOfWeek) continue;
+
+      // Check overlap: place open [openMin, effectiveClose] vs slot [periodStart, periodEnd]
+      if(openMin < periodEnd && effectiveClose > periodStart) return true;
+    }
+    // Also check if an overnight period from previous day covers this slot
+    const prevDay = (dayOfWeek + 6) % 7;
+    for(const p of periods){
+      if((p.open?.day ?? -1) !== prevDay) continue;
+      const openMin  = (p.open?.hour  ?? 0)*60 + (p.open?.minute  ?? 0);
+      const closeDay = p.close?.day ?? prevDay;
+      const closeMin = (p.close?.hour ?? 0)*60  + (p.close?.minute ?? 0);
+      if(closeDay === dayOfWeek){
+        // Overnight: effective close is closeMin (already on dayOfWeek)
+        if(closeMin > periodStart) return true;
+      }
+    }
+    return false;
+  }
+
+  /* Returns { open: bool|null, label: string } for a place given filter */
+  // Check if open during a given date+period (periodId null = no check)
+  function isOpenForFilter(place, date, periodId){
+    if(!periodId) return true;
+    const d = new Date(date + "T00:00:00");
+    const dayOfWeek = d.getDay();
+    const period = MEAL_PERIODS.find(p=>p.id===periodId);
+    if(!period) return true;
+    const periods = place.regularOpeningHours?.periods;
+    const result = isOpenDuringPeriod(periods, dayOfWeek, period.start, period.end);
+    return result !== false;
+  }
+
+  // Opening hours for a given date string (YYYY-MM-DD)
+  function getHoursForDate(place, dateStr){
+    const descs = place.regularOpeningHours?.weekdayDescriptions;
+    if(!descs?.length) return null;
+    const jsDay = new Date(dateStr + "T00:00:00").getDay(); // 0=Sun
+    const gIdx = jsDay === 0 ? 6 : jsDay - 1; // Google: 0=Mon … 6=Sun
+    return (descs[gIdx] || "").replace(/^[^:]+:\s*/, "") || null;
+  }
+
+  /* ── Type groups: grouped multi-select ── */
+  const TYPE_GROUPS = [
+    { group:"一般餐廳", items:[
+      { id:"restaurant",       label:"餐廳"   },
+      { id:"brunch_restaurant",label:"早午餐" },
+      { id:"american_restaurant",label:"美式" },
+      { id:"steak_house",      label:"牛排"   },
+    ]},
+    { group:"亞洲料理", items:[
+      { id:"chinese_restaurant",  label:"中式" },
+      { id:"japanese_restaurant", label:"日式" },
+      { id:"korean_restaurant",   label:"韓式" },
+      { id:"thai_restaurant",     label:"泰式" },
+      { id:"vietnamese_restaurant",label:"越式"},
+      { id:"ramen_restaurant",    label:"拉麵" },
+      { id:"sushi_restaurant",    label:"壽司" },
+      { id:"hot_pot_restaurant",  label:"火鍋" },
+    ]},
+    { group:"西式", items:[
+      { id:"italian_restaurant",  label:"義式" },
+      { id:"pizza_restaurant",    label:"披薩" },
+      { id:"hamburger_restaurant",label:"漢堡" },
+      { id:"sandwich_shop",       label:"三明治"},
+      { id:"seafood_restaurant",  label:"海鮮" },
+      { id:"vegetarian_restaurant",label:"蔬食"},
+    ]},
+    { group:"輕食飲品", items:[
+      { id:"cafe",                label:"咖啡廳" },
+      { id:"coffee_shop",         label:"咖啡店" },
+      { id:"dessert_shop",        label:"甜點"   },
+      { id:"bakery",              label:"烘焙坊" },
+      { id:"ice_cream_shop",      label:"冰品"   },
+    ]},
+    { group:"速食／其他", items:[
+      { id:"meal_takeaway",       label:"速食外帶" },
+      { id:"fast_food_restaurant",label:"速食"     },
+      { id:"bar",                 label:"酒吧"     },
+      { id:"wine_bar",            label:"葡萄酒吧" },
+      { id:"pub",                 label:"酒館"     },
+    ]},
+  ];
+  const ALL_TYPES = TYPE_GROUPS.flatMap(g=>g.items.map(i=>i.id));
+  // Flat id→label map derived from TYPE_GROUPS
+  const TYPE_LABEL_MAP = Object.fromEntries(
+    TYPE_GROUPS.flatMap(g=>g.items.map(i=>[i.id, i.label]))
+  );
+
+  const OSM_QUERY_MAP = {
+    all:"restaurant|cafe|fast_food|bar|bakery|ice_cream|bubble_tea",
+    restaurant:"restaurant", cafe:"cafe", fast_food:"fast_food",
+    bakery:"bakery|ice_cream|bubble_tea", bar:"bar",
+  };
+
+  const CUISINE_MAP = {
+    chinese:"中式",japanese:"日式",italian:"義式",korean:"韓式",
+    american:"美式",french:"法式",thai:"泰式",vietnamese:"越式",
+    taiwanese:"台式",pizza:"披薩",sushi:"壽司",ramen:"拉麵",
+    hot_pot:"火鍋",seafood:"海鮮",vegetarian:"蔬食",burger:"漢堡",
+    sandwich:"三明治",coffee:"咖啡",dessert:"甜點",breakfast:"早餐",
+    brunch:"早午餐",tea:"茶飲",noodle:"麵食",
+  };
+
+  // Build label lookup from TYPE_GROUPS (defined later) — filled after TYPE_GROUPS declaration
+  // Placeholder; actual map built inline below after TYPE_GROUPS
+  function getGoogleTypeLabel(types=[]){
+    // Will use TYPE_LABEL_MAP once available; this is called at runtime not parse time
+    if(typeof TYPE_LABEL_MAP !== "undefined"){
+      for(const t of (types||[])) if(TYPE_LABEL_MAP[t]) return TYPE_LABEL_MAP[t];
+    }
+    return types?.[0]?.replace(/_/g," ") || "店家";
+  }
+  function haversine(lat1,lon1,lat2,lon2){
+    const R=6371000,dLat=(lat2-lat1)*Math.PI/180,dLon=(lon2-lon1)*Math.PI/180;
+    const a=Math.sin(dLat/2)**2+Math.cos(lat1*Math.PI/180)*Math.cos(lat2*Math.PI/180)*Math.sin(dLon/2)**2;
+    return R*2*Math.atan2(Math.sqrt(a),Math.sqrt(1-a));
+  }
+  function getCuisineLabel(tags){
+    if(!tags.cuisine) return null;
+    const c=tags.cuisine.split(/[;,_]/)[0].trim().toLowerCase();
+    return CUISINE_MAP[c]||tags.cuisine.split(";")[0].replace(/_/g," ");
+  }
+  function getOsmAmenityLabel(a){
+    return {restaurant:"餐廳",cafe:"咖啡廳",fast_food:"速食",bar:"酒吧",bakery:"烘焙坊",ice_cream:"冰品",bubble_tea:"飲料"}[a]||a;
+  }
+  function todayStr(){
+    const d=new Date();
+    return `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,"0")}-${String(d.getDate()).padStart(2,"0")}`;
+  }
+
+  /* ── Google Places REST ── */
+  async function searchNearbyGoogle(apiKey, lat, lon, types, rad, pageToken){
+    const body={
+      includedTypes:types,
+      maxResultCount:20,
+      locationRestriction:{circle:{center:{latitude:lat,longitude:lon},radius:rad}},
+      ...(pageToken?{pageToken}:{}),
+    };
+    const res=await fetch(PLACES_API,{
+      method:"POST",
+      headers:{"Content-Type":"application/json","X-Goog-Api-Key":apiKey,"X-Goog-FieldMask":FIELDS},
+      body:JSON.stringify(body),
+    });
+    if(!res.ok){ const e=await res.json().catch(()=>({})); throw new Error(e?.error?.message||`HTTP ${res.status}`); }
+    return res.json();
+  }
+
+  /* ── Stars ── */
+  function Stars({ rating, count }){
+    if(rating==null) return <span className="rating-na">無評分</span>;
+    const full=Math.floor(rating), half=rating-full>=0.4;
+    const countStr=count!=null?(count>=1000?`(${(count/1000).toFixed(1)}k)`:`(${count})`):"";
+    return(
+      <span className="rating-wrap">
+        <span className="stars">{[1,2,3,4,5].map(i=>(
+          <span key={i} className={i<=full?"sf":i===full+1&&half?"sh":"se"}>★</span>
+        ))}</span>
+        <span className="rating-num">{rating.toFixed(1)}</span>
+        {countStr&&<span className="rating-count">{countStr}</span>}
+      </span>
+    );
+  }
+
+
+  async function searchTextGoogle(apiKey, keyword, lat, lon, rad){
+    const body={
+      textQuery: keyword,
+      maxResultCount: 20,
+      locationBias:{circle:{center:{latitude:lat,longitude:lon},radius:rad}},
+    };
+    const res=await fetch(TEXT_SEARCH_API,{
+      method:"POST",
+      headers:{"Content-Type":"application/json","X-Goog-Api-Key":apiKey,"X-Goog-FieldMask":FIELDS},
+      body:JSON.stringify(body),
+    });
+    return res.json();
+  }
+
+    /* ══ App ══════════════════════════════════════════════════════ */
+  function App(){
+    const [location,setLocation]         = useState(null);
+    const [locLabel,setLocLabel]         = useState(null);
+    const [places,setPlaces]             = useState([]);
+    const [loading,setLoading]           = useState(false);
+    const [locating,setLocating]         = useState(false);
+    const [error,setError]               = useState(null);
+    const [debugLog,setDebugLog]         = useState([]);
+    const [bgStatus,setBgStatus]         = useState(null);
+    const [selectedTypes,setSelectedTypes] = useState(new Set(ALL_TYPES)); // default all selected
+    const [sortBy,setSortBy]             = useState("distance");
+    const [radius,setRadius]             = useState(1000);
+    const [searchText,setSearchText]     = useState("");
+    const [locMode,setLocMode]           = useState("gps");
+    const [mpAddr,setMpAddr]   = useState("");
+    const [mpLabel,setMpLabel] = useState(null);
+    const [mpLL,setMpLL]       = useState(null);
+    const [mapOpen,setMapOpen] = useState(true);
+    const [typeOpen,setTypeOpen] = useState(true);
+    const mapRef = useRef(null); const mrkRef = useRef(null); const mapDiv = useRef(null);
+    const circleRef = useRef(null);
+    const radiusRef = useRef(radius);
+    const [manualAddr,setManualAddr]     = useState("");
+    const [geocoding,setGeocoding]       = useState(false);
+    const [apiKey,setApiKey]             = useState(()=>localStorage.getItem('gmaps_api_key')||"");
+    const [apiKeyInput,setApiKeyInput]   = useState(()=>localStorage.getItem('gmaps_api_key')||"");
+    const [showKeyInput,setShowKeyInput] = useState(false);
+
+    // Time filter state
+    const [timeFilter,setTimeFilter] = useState({ date:todayStr(), periodId:null, showOpen:true });
+
+    const cancelRef = useRef({cancelled:false});
+
+    const log = useCallback((msg)=>{
+      console.log("[美食地圖]", msg);
+      setDebugLog(prev=>[...prev.slice(-5), msg]);
+    },[]);
+
+    const isGoogleMode = !!apiKey;
+
+    /* ── Google fetch ── */
+    const fetchGooglePlaces = useCallback(async(lat, lon, types, rad, key, token)=>{
+      log(`Places API 送出：半徑${rad}m，共 ${types.length} 種類型`);
+      const data = await searchNearbyGoogle(key, lat, lon, types, rad);
+      if(token.cancelled) return;
+
+      const toItem = p => ({
+        id:p.id, placeId:p.id,
+        name:p.displayName?.text||"(無名稱)",
+        typeLabel:getGoogleTypeLabel(p.types||[]),
+        address:p.formattedAddress||"",
+        lat:p.location.latitude, lon:p.location.longitude,
+        distance:haversine(lat,lon,p.location.latitude,p.location.longitude),
+        rating:p.rating??null, ratingCount:p.userRatingCount??null,
+        regularOpeningHours:p.regularOpeningHours||null,
+        currentOpeningHours:p.currentOpeningHours||null,
+        source:"google",
+      });
+
+      const page1=(data.places||[]).map(toItem);
+      log(`第 1 頁：${page1.length} 筆`);
+      setPlaces(page1); setLoading(false);
+
+      if(data.nextPageToken){
+        setBgStatus("載入更多店家…");
+        setTimeout(async()=>{
+          if(token.cancelled){ setBgStatus(null); return; }
+          try{
+            const data2=await searchNearbyGoogle(key,lat,lon,types,rad,data.nextPageToken);
+            if(token.cancelled){ setBgStatus(null); return; }
+            const page2=(data2.places||[]).map(toItem);
+            log(`第 2 頁：+${page2.length} 筆`);
+            setPlaces(prev=>{ const ids=new Set(prev.map(p=>p.id)); return [...prev,...page2.filter(p=>!ids.has(p.id))]; });
+          }catch(e){ log(`第 2 頁失敗：${e.message}`); }
+          setBgStatus(null);
+        },500);
+      }
+    },[log]);
+
+        const fetchGoogleTextPlaces = useCallback(async(lat,lon,rad,key,keyword,token)=>{
+      const data = await searchTextGoogle(key, keyword, lat, lon, rad);
+      if(token.cancelled) return;
+      log(`textSearch 回傳：${JSON.stringify(data).slice(0,200)}`);
+      if(data.error){ setError(`關鍵字搜尋錯誤：${data.error.message}`); setLoading(false); return; }
+      const toItem = p => ({
+        id:p.id, placeId:p.id,
+        name:p.displayName?.text||"(無名稱)",
+        typeLabel:getGoogleTypeLabel(p.types||[]),
+        address:p.formattedAddress||"",
+        lat:p.location.latitude, lon:p.location.longitude,
+        distance:haversine(lat,lon,p.location.latitude,p.location.longitude),
+        rating:p.rating??null, ratingCount:p.userRatingCount??null,
+        regularOpeningHours:p.regularOpeningHours||null,
+        currentOpeningHours:p.currentOpeningHours||null,
+        source:"google",
+      });
+      const results=(data.places||[]).map(toItem);
+      log(`關鍵字搜尋：${results.length} 筆`);
+      setPlaces(results); setLoading(false);
+    },[log]);
+
+    /* ── Main fetch ── */
+    const fetchPlaces = useCallback(async(lat, lon, types, rad, key, keyword)=>{
+      cancelRef.current.cancelled=true;
+      const token={cancelled:false}; cancelRef.current=token;
+      setLoading(true); setError(null); setPlaces([]); setBgStatus(null); setDebugLog([]);
+      try{
+        if(key){
+          log("使用 Google Places API (New)");
+          if(keyword){
+            log(`關鍵字模式：「${keyword}」`);
+            await fetchGoogleTextPlaces(lat,lon,rad,key,keyword,token);
+          } else {
+            await fetchGooglePlaces(lat,lon,types,rad,key,token);
+          }
+        } else {
+          log("使用 OpenStreetMap 資料來源");
+          const q=OSM_QUERY_MAP["all"];
+          const oq=`[out:json][timeout:20];(node["amenity"~"${q}"](around:${rad},${lat},${lon});way["amenity"~"${q}"](around:${rad},${lat},${lon}););out body center;`;
+          const res=await fetch("https://overpass-api.de/api/interpreter",{method:"POST",body:`data=${encodeURIComponent(oq)}`});
+          const data=await res.json();
+          const items=data.elements.filter(el=>el.tags?.name).map(el=>{
+            const elLat=el.lat??el.center?.lat, elLon=el.lon??el.center?.lon;
+            return{ id:el.id, name:el.tags.name, typeLabel:getOsmAmenityLabel(el.tags.amenity),
+              cuisine:getCuisineLabel(el.tags),
+              address:[el.tags["addr:street"],el.tags["addr:housenumber"]].filter(Boolean).join(" "),
+              lat:elLat,lon:elLon, distance:haversine(lat,lon,elLat,elLon),
+              rating:null,ratingCount:null,regularOpeningHours:null,currentOpeningHours:null,source:"osm"};
+          }).filter(el=>el.lat&&el.lon);
+          log(`OSM 回傳：${items.length} 筆`);
+          setPlaces(items); setLoading(false);
+        }
+      }catch(e){
+        log(`錯誤：${e.message}`); setLoading(false);
+        if(!token.cancelled) setError(`搜尋失敗：${e.message}`);
+      }
+    },[fetchGooglePlaces,log]);
+
+    const handleLocate=(autoRun=false)=>{
+      setLocating(true); setError(null);
+      navigator.geolocation.getCurrentPosition(
+        pos=>{ const{latitude:la,longitude:lo}=pos.coords;
+          setMpLL({lat:la,lon:lo}); setMpLabel("目前位置");
+          if(mapRef.current){ mapRef.current.setView([la,lo],17); mrkRef.current&&mrkRef.current.setLatLng([la,lo]); circleRef.current&&circleRef.current.setLatLng([la,lo]); }
+          setLocating(false); },
+        ()=>{ setLocating(false); if(!autoRun) setError("無法取得位置，請確認瀏覽器定位權限已開啟。"); },
+        {enableHighAccuracy:true,timeout:8000}
+      );
+    };
+    const handleManualSearch=async()=>{
+      if(!manualAddr.trim()) return;
+      setGeocoding(true); setError(null);
+      try{
+        if(apiKey){
+          const res=await fetch(
+            `https://maps.googleapis.com/maps/api/geocode/json?address=${encodeURIComponent(manualAddr)}&region=tw&language=zh-TW&key=${apiKey}`
+          );
+          const data=await res.json();
+          // Check status FIRST — REQUEST_DENIED means API not enabled
+          if(data.status==="REQUEST_DENIED")
+            throw new Error("Geocoding API 尚未啟用，請至 Google Cloud Console 啟用後再試");
+          if(data.status!=="OK"&&data.status!=="ZERO_RESULTS")
+            throw new Error(data.error_message||data.status);
+          if(data.status==="ZERO_RESULTS"||!data.results?.length){
+            setError("找不到此地址，請試試更詳細的地址或地標名稱。");
+            setGeocoding(false); return;
+          }
+          const r=data.results[0];
+          const la=r.geometry.location.lat, lo=r.geometry.location.lng;
+          const label=r.address_components?.[0]?.long_name||r.formatted_address.split(",")[0];
+          setLocation({lat:la,lon:lo}); setLocLabel(label);
+          setGeocoding(false); fetchPlaces(la,lo,Array.from(selectedTypes),radius,apiKey,searchText.trim());
+        } else {
+          const res=await fetch(
+            `https://nominatim.openstreetmap.org/search?format=json&q=${encodeURIComponent(manualAddr)}&countrycodes=tw&limit=1`,
+            {headers:{"Accept-Language":"zh-TW"}}
+          );
+          const data=await res.json();
+          if(!data.length){ setError("找不到此地址，建議輸入 Google API 金鑰以提升定位精準度。"); setGeocoding(false); return; }
+          const la=parseFloat(data[0].lat),lo=parseFloat(data[0].lon);
+          setLocation({lat:la,lon:lo}); setLocLabel(data[0].display_name.split(",")[0]);
+          setGeocoding(false); fetchPlaces(la,lo,Array.from(selectedTypes),radius,apiKey,searchText.trim());
+        }
+      }catch(e){ setGeocoding(false); setError("地址查詢失敗："+e.message); }
+    };
+
+
+    // Map picker logic — initialize on mount
+    useEffect(()=>{
+      const t=setTimeout(()=>{
+        if(!mapDiv.current||mapRef.current) return;
+        const lat=(mpLL&&mpLL.lat)||(location&&location.lat)||25.0478;
+        const lon=(mpLL&&mpLL.lon)||(location&&location.lon)||121.5318;
+        const map=L.map(mapDiv.current).setView([lat,lon],16);
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{maxZoom:19,attribution:'© OpenStreetMap'}).addTo(map);
+        const mkIcon=L.divIcon({className:'',html:'<div style="width:14px;height:14px;background:#4285F4;border:2.5px solid #fff;border-radius:50%;box-shadow:0 1px 6px rgba(66,133,244,.5);position:relative;"><div style="position:absolute;inset:-5px;border-radius:50%;background:rgba(66,133,244,.15);"></div></div>',iconSize:[14,14],iconAnchor:[7,7]});
+        const mrk=L.marker([lat,lon],{icon:mkIcon,draggable:true}).addTo(map);
+        const circle=L.circle([lat,lon],{radius:radiusRef.current,color:'#4285F4',fillColor:'#4285F4',fillOpacity:0.1,weight:1,dashArray:null,opacity:0.6}).addTo(map);
+        mapRef.current=map; mrkRef.current=mrk; circleRef.current=circle;
+        if(!mpLL){ setMpLL({lat,lon}); rvGeo(lat,lon); }
+        map.on('click',e=>{ mrk.setLatLng(e.latlng); circleRef.current&&circleRef.current.setLatLng(e.latlng); setMpLL({lat:e.latlng.lat,lon:e.latlng.lng}); rvGeo(e.latlng.lat,e.latlng.lng); });
+        mrk.on('dragend',e=>{ const p=e.target.getLatLng(); circleRef.current&&circleRef.current.setLatLng(p); setMpLL({lat:p.lat,lon:p.lng}); rvGeo(p.lat,p.lng); });
+        // Auto GPS on first load
+        if(navigator.geolocation){
+          navigator.geolocation.getCurrentPosition(
+            pos=>{ const la=pos.coords.latitude,lo=pos.coords.longitude;
+              setMpLL({lat:la,lon:lo});
+              map.setView([la,lo],17); mrk.setLatLng([la,lo]);
+              circleRef.current&&circleRef.current.setLatLng([la,lo]);
+              // reverse geocode for proper label
+              fetch('https://nominatim.openstreetmap.org/reverse?format=json&lat='+la+'&lon='+lo,{headers:{'Accept-Language':'zh-TW'}})
+                .then(r=>r.json()).then(d=>{
+                  const a=d.address||{};
+                  const parts=[];
+                  if(d.name) parts.push(d.name);
+                  if(a.road) parts.push(a.road+(a.house_number?' '+a.house_number:''));
+                  if(!parts.length) parts.push(a.suburb||a.quarter||a.neighbourhood||a.city_district||a.town||a.city||'目前位置');
+                  setMpLabel(parts.join(' · '));
+                }).catch(()=>setMpLabel('目前位置'));
+            },
+            ()=>{}, {enableHighAccuracy:true,timeout:8000}
+          );
+        }
+      },150);
+      return()=>clearTimeout(t);
+    },[]);
+    // Sync circle radius when user changes the radius chip
+    useEffect(()=>{
+      radiusRef.current = radius;
+      if(circleRef.current) circleRef.current.setRadius(radius);
+    },[radius]);
+    const rvGeo=async(lat,lon)=>{
+      try{
+        const r=await fetch('https://nominatim.openstreetmap.org/reverse?format=json&lat='+lat+'&lon='+lon,{headers:{'Accept-Language':'zh-TW'}});
+        const d=await r.json();
+        const a=d.address||{};
+        const parts=[];
+        // d.name = landmark name (e.g. 花園夜市), most reliable source
+        if(d.name) parts.push(d.name);
+        // road + house number
+        if(a.road) parts.push(a.road+(a.house_number?' '+a.house_number:''));
+        // fallback to district/city if nothing useful
+        if(!parts.length) parts.push(a.suburb||a.quarter||a.neighbourhood||a.city_district||a.town||a.city||'選定位置');
+        setMpLabel(parts.join(' · '));
+      }catch(e){setMpLabel('選定位置');}
+    };
+    const mpJump=async()=>{
+      if(!mpAddr.trim()||!mapRef.current) return;
+      let lat,lon,label;
+      try{
+        if(apiKey){
+          const r=await fetch('https://maps.googleapis.com/maps/api/geocode/json?address='+encodeURIComponent(mpAddr)+'&region=tw&language=zh-TW&key='+apiKey);
+          const d=await r.json();
+          if(d.status==='OK'&&d.results&&d.results.length){ lat=d.results[0].geometry.location.lat; lon=d.results[0].geometry.location.lng; label=(d.results[0].address_components[0]&&d.results[0].address_components[0].long_name)||mpAddr; }
+        } else {
+          const r=await fetch('https://nominatim.openstreetmap.org/search?format=json&q='+encodeURIComponent(mpAddr)+'&countrycodes=tw&limit=1',{headers:{'Accept-Language':'zh-TW'}});
+          const d=await r.json();
+          if(d.length){ lat=parseFloat(d[0].lat); lon=parseFloat(d[0].lon); label=d[0].display_name.split(',')[0]; }
+        }
+        if(lat&&lon){ mapRef.current.setView([lat,lon],17); mrkRef.current&&mrkRef.current.setLatLng([lat,lon]); circleRef.current&&circleRef.current.setLatLng([lat,lon]); setMpLL({lat,lon}); setMpLabel(label||mpAddr); }
+      }catch(e){console.error(e);}
+    };
+    const mpConfirm=()=>{
+      if(!mpLL) return;
+      setLocation({lat:mpLL.lat,lon:mpLL.lon});
+      setLocLabel(mpLabel||'地圖選點');
+      setMapOpen(false);
+      setTypeOpen(false);
+      fetchPlaces(mpLL.lat,mpLL.lon,Array.from(selectedTypes),radius,apiKey,searchText.trim());
+    };
+    const typesArray = useCallback(()=>Array.from(selectedTypes),[selectedTypes]);
+    const handleTypeToggle = (id)=>{
+      setSelectedTypes(prev=>{
+        const next=new Set(prev);
+        next.has(id)?next.delete(id):next.add(id);
+        return next;
+      });
+    };
+    const handleSelectAll  = ()=>setSelectedTypes(new Set(ALL_TYPES));
+    const handleClearAll   = ()=>setSelectedTypes(new Set());
+    const handleRadiusChange = r=>{ setRadius(r); if(location) fetchPlaces(location.lat,location.lon,Array.from(selectedTypes),r,apiKey,searchText.trim()); };
+    const handleConfirmKey = ()=>{
+      const k=apiKeyInput.trim();
+      setApiKey(k);
+      if(k) localStorage.setItem('gmaps_api_key',k);
+      else localStorage.removeItem('gmaps_api_key');
+      setShowKeyInput(false);
+      if(location) fetchPlaces(location.lat,location.lon,Array.from(selectedTypes),radius,k);
+    };
+    const handleClearKey = ()=>{
+      setApiKey(''); setApiKeyInput('');
+      localStorage.removeItem('gmaps_api_key');
+      setShowKeyInput(false);
+    };
+    const handleSearch = ()=>{ if(location){ setTypeOpen(false); fetchPlaces(location.lat,location.lon,Array.from(selectedTypes),radius,apiKey,searchText.trim()); } };
+
+    /* ── Filter & sort ── */
+    const filtered = useMemo(()=>{
+      return places
+        .filter(p=>{
+          // Rating filter (Google mode only)
+          if(isGoogleMode && p.rating!==null && p.rating < MIN_RATING) return false;
+          // Distance filter for keyword mode (locationBias is not strict)
+          if(searchText.trim() && p.distance > radius) return false;
+          // Text search filter only applies in type mode (keyword mode fetches directly)
+          if(!searchText.trim() && false) return false; // placeholder
+          // Time filter (only in Google mode)
+          // "只顯示當日營業" — check if open on selected date (any hour)
+          if(isGoogleMode && timeFilter.showOpen){
+            const d = new Date(timeFilter.date + "T00:00:00");
+            const dayOfWeek = d.getDay();
+            const periods = p.regularOpeningHours?.periods;
+            if(periods?.length){
+              // open all day = check any period overlaps the full day 0–1440
+              const openToday = isOpenDuringPeriod(periods, dayOfWeek, 0, 1440);
+              if(openToday === false) return false;
+            }
+          }
+          return true;
+        })
+        .sort((a,b)=>{
+          if(sortBy==="rating")      return (b.rating||0)-(a.rating||0);
+          if(sortBy==="ratingCount") return (b.ratingCount||0)-(a.ratingCount||0);
+          return a.distance-b.distance;
+        });
+    },[places, isGoogleMode, searchText, timeFilter, sortBy, selectedTypes]);
+
+    const hiddenCount = places.length - filtered.length;
+
+    /* ── Time filter section ── */
+    const TimeFilterSection = ()=>(
+      <div className="time-filter-wrap">
+        <div className="time-filter-header">
+          <span className="row-label">🕐 篩選日期</span>
+          <input type="date" className="date-input-inline" value={timeFilter.date}
+            onChange={e=>setTimeFilter(f=>({...f,date:e.target.value}))}/>
+          <label className="open-toggle">
+            <input type="checkbox" checked={timeFilter.showOpen}
+              onChange={e=>setTimeFilter(f=>({...f,showOpen:e.target.checked}))}/>
+            <span>只顯示當日營業</span>
+          </label>
+            </div>
+          </div>
+    );
+
+    return (<>
+      <style>{`
+        :root{--f:${FONT};--blue:#1e9fdf;--bg:#f3f9ff;--card:#ffffff;--border:#b8dcff;--text:#1a2a3a;--muted:#7a9ab8;--dim:#b0c8e0;}
+        *{font-family:var(--f);}
+        input,button,select,textarea{font-family:var(--f);}
+        .app{min-height:100vh;background:var(--bg);color:var(--text);padding-bottom:52px;}
+        /* Header */
+        .header{background:#fff;padding:13px 16px;border-bottom:1px solid var(--border);}
+        .header-inner{max-width:600px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;}
+        .header-top{display:flex;align-items:center;gap:10px;}
+        .header-title{font-family:'Caveat',cursive;font-size:26px;font-weight:600;color:var(--blue);line-height:1;}
+        .header-sub{font-size:11px;color:#7a9ab8;letter-spacing:2px;font-style:italic;}
+        .source-badge{display:none;}
+        .src-google{display:none;}
+        .src-osm{display:none;}
+        /* Controls */
+        .controls{padding:14px 14px 0;display:flex;flex-direction:column;gap:11px;max-width:600px;margin:0 auto;}
+        .mode-tabs{display:flex;background:#e4f0fc;border:1px solid var(--border);border-radius:10px;padding:3px;gap:3px;}
+        .mode-tab{flex:1;padding:8px;border-radius:8px;border:none;background:transparent;color:var(--muted);font-size:13px;cursor:pointer;transition:all .2s;letter-spacing:1px;}
+        .mode-tab.active{background:#fff;color:#1478c4;box-shadow:0 1px 6px rgba(30,159,223,.15);}
+        .locate-btn{display:flex;align-items:center;justify-content:center;gap:8px;background:linear-gradient(135deg,var(--blue),#1a8fd4);color:#fff;border:none;border-radius:10px;padding:13px;font-size:14px;font-weight:700;cursor:pointer;letter-spacing:2px;transition:all .2s;box-shadow:0 3px 12px rgba(30,159,223,.3);}
+        .locate-btn:hover{transform:translateY(-1px);} .locate-btn:disabled{opacity:.6;cursor:not-allowed;transform:none;}
+        .row2{display:flex;gap:8px;}
+        .flex-input{flex:1;background:#fff;border:1px solid var(--border);border-radius:9px;padding:10px 13px;color:var(--text);font-size:13px;outline:none;transition:border-color .2s;}
+        .flex-input:focus{border-color:var(--blue);} .flex-input::placeholder{color:var(--dim);}
+        .btn-go{padding:10px 14px;border-radius:9px;border:none;background:linear-gradient(135deg,var(--blue),#1a8fd4);color:#fff;font-size:13px;font-weight:700;cursor:pointer;white-space:nowrap;}
+        .btn-go:disabled{opacity:.5;cursor:not-allowed;}
+        /* API key */
+        .api-row{display:flex;align-items:center;gap:8px;flex-wrap:wrap;}
+        .api-toggle{background:#fff;border:1px solid var(--border);border-radius:8px;padding:6px 11px;color:var(--muted);font-size:11px;cursor:pointer;transition:all .2s;white-space:nowrap;}
+        .api-toggle:hover{border-color:var(--blue);} .api-toggle.on{border-color:var(--blue);color:var(--blue);}
+        .api-ok{font-size:11px;color:#3a8a3a;display:flex;align-items:center;gap:5px;}
+        .api-dot{width:5px;height:5px;border-radius:50%;background:#3a8a3a;}
+        .api-hint{font-size:11px;color:var(--dim);line-height:1.8;} .api-hint a{color:var(--blue);text-decoration:underline;}
+        /* Time filter */
+        .time-filter-wrap{background:#eaf3fd;border:1px solid var(--border);border-radius:10px;padding:10px 12px;display:flex;flex-direction:column;gap:9px;}
+        .time-filter-header{display:flex;align-items:center;gap:8px;flex-wrap:wrap;}
+        .date-click-wrap{position:relative;cursor:pointer;display:inline-flex;align-items:center;}
+        .date-display{font-size:12px;color:var(--text);background:#fff;border:1px solid var(--border);border-radius:8px;padding:5px 10px;white-space:nowrap;transition:border-color .2s;}
+        .date-click-wrap:hover .date-display{border-color:var(--blue);}
+        .date-input-hidden{position:absolute;inset:0;opacity:0;cursor:pointer;width:100%;height:100%;}
+        .date-input-inline{background:#fff;border:1px solid var(--border);border-radius:8px;padding:5px 8px;color:var(--text);font-size:12px;outline:none;transition:border-color .2s;flex:1;min-width:0;font-family:var(--f);}
+        .date-input-inline:focus{border-color:var(--blue);}
+        .date-input-inline::-webkit-calendar-picker-indicator{filter:none;}
+        .open-toggle{display:flex;align-items:center;gap:5px;font-size:11px;color:var(--muted);cursor:pointer;white-space:nowrap;flex-shrink:0;}
+        .open-toggle input{accent-color:var(--blue);width:13px;height:13px;}
+        .meal-chips{display:flex;gap:5px;flex-wrap:wrap;}
+        .meal-chip{padding:5px 11px;border-radius:18px;border:1px solid var(--border);background:#fff;color:#4a7a9a;font-size:12px;cursor:pointer;transition:all .2s;white-space:nowrap;}
+        .meal-chip-on{background:var(--blue);color:#fff;border-color:var(--blue);}
+        /* Misc badges */
+        .loc-badge{display:flex;align-items:center;gap:6px;font-size:11px;color:#8a6a50;background:#fff8f0;border:1px solid var(--border);border-radius:7px;padding:5px 10px;}
+        .loc-dot{width:5px;height:5px;border-radius:50%;background:var(--blue);animation:pulse 2s ease-in-out infinite;flex-shrink:0;}
+        @keyframes pulse{0%,100%{opacity:1}50%{opacity:.3}}
+        @keyframes spin{to{transform:rotate(360deg)}}
+        .spinner{display:inline-block;width:9px;height:9px;border:2px solid var(--border);border-top-color:var(--blue);border-radius:50%;animation:spin .8s linear infinite;flex-shrink:0;}
+        .bg-note{font-size:11px;color:#3a7aaa;background:#e8f4fd;border:1px solid #b8d8f5;border-radius:7px;padding:5px 10px;display:flex;align-items:center;gap:6px;}
+        .debug-panel{background:#f0f8ff;border:1px solid #c8e0f8;border-radius:8px;padding:8px 10px;display:flex;flex-direction:column;gap:3px;}
+        .debug-line{font-size:10px;color:#6090c0;}
+        /* Row controls */
+        .row-inline{display:flex;align-items:center;gap:8px;flex-wrap:wrap;}
+        .row-label{font-size:11px;color:var(--muted);white-space:nowrap;}
+        .chip-group{display:flex;width:100%;background:#eaf3fd;border-radius:10px;padding:3px;gap:2px;}
+        .chip{flex:1;text-align:center;background:none;border:none;border-radius:8px;padding:6px 0;font-size:11px;color:var(--muted);cursor:pointer;transition:all .2s;}
+        .chip.active{background:#fff;color:var(--blue);font-weight:700;box-shadow:0 1px 4px rgba(30,159,223,.15);}
+        /* Type selector */
+        .type-selector{background:#eaf3fd;border:1px solid var(--border);border-radius:10px;padding:10px 12px;display:flex;flex-direction:column;gap:10px;}
+        .type-selector-header{display:flex;align-items:center;gap:8px;}
+        .type-ctrl-btn{padding:3px 10px;border-radius:6px;border:1px solid var(--border);background:#fff;color:var(--muted);font-size:11px;cursor:pointer;transition:all .2s;}
+        .type-ctrl-btn:hover{border-color:var(--blue);color:#2a7aaa;}
+        .type-count{font-size:10px;color:var(--dim);margin-left:auto;}
+        .type-group{display:flex;flex-direction:column;gap:6px;}
+        .type-group-label{font-size:10px;color:#5a90c0;letter-spacing:1.5px;font-weight:700;text-transform:uppercase;}
+        .type-chips{display:flex;flex-wrap:wrap;gap:5px;}
+        .type-chip{padding:4px 11px;border-radius:16px;border:1px solid var(--border);background:#fff;color:#4a7a9a;font-size:12px;cursor:pointer;transition:all .18s;}
+        .type-chip:hover{border-color:var(--blue);color:var(--blue);}
+        .type-chip-on{background:var(--blue);color:#fff;border-color:var(--blue);}
+        .search-sort-row{max-width:600px;margin:0 auto;padding:0 14px;display:flex;gap:8px;align-items:center;}
+        .search-input{flex:1;background:#fff;border:1px solid var(--border);border-radius:9px;padding:9px 13px;color:var(--text);font-size:13px;outline:none;transition:border-color .2s;}
+        .search-input:focus{border-color:var(--blue);} .search-input::placeholder{color:var(--dim);}
+        .sort-select{background:#fff;border:1px solid var(--border);border-radius:9px;padding:9px 10px;color:#5a80a0;font-size:12px;outline:none;cursor:pointer;font-family:var(--f);}
+        /* Results */
+        .results-header{max-width:600px;margin:0 auto;padding:10px 14px 8px;display:flex;align-items:center;gap:6px;flex-wrap:wrap;}
+        .results-count{display:none;}
+        .results-label{font-size:14px;font-weight:700;color:#1478c4;flex:1;}
+        .filter-note{font-size:11px;color:#1e9fdf;background:rgba(30,159,223,.08);border:1px solid rgba(30,159,223,.25);border-radius:6px;padding:2px 8px;}
+        /* Table-style place list */
+        .place-list{max-width:600px;margin:0 auto;padding:0 14px;display:flex;flex-direction:column;gap:10px;}
+        .results-wrap{max-width:600px;margin:0 auto;padding:0 14px;}
+        .card-list{display:flex;flex-direction:column;gap:10px;}
+        .place-card{background:#fff;border:1px solid var(--border);border-radius:14px;padding:14px 16px;display:flex;flex-direction:column;gap:8px;box-shadow:0 2px 8px rgba(30,159,223,.08);transition:box-shadow .2s,border-color .2s;}
+        .place-card:hover{box-shadow:0 4px 16px rgba(30,159,223,.15);border-color:#7ac8ef;}
+        .card-name{font-size:15px;font-weight:700;color:#2a4a6a;line-height:1.3;}
+        .card-meta{display:flex;gap:8px;flex-wrap:wrap;align-items:center;}
+        .card-tag{background:#eaf3fd;color:var(--blue);font-size:11px;border-radius:6px;padding:2px 8px;}
+        .card-rating{font-size:12px;color:#e8a020;}
+        .card-count{font-size:11px;color:var(--muted);}
+        .card-hours{font-size:11px;color:var(--muted);}
+        .card-bottom{display:flex;justify-content:space-between;align-items:center;margin-top:2px;}
+        .card-dist{font-size:12px;color:var(--blue);}
+        .place-row{display:none;}
+        .place-row-header{
+          font-size:12px;color:var(--muted);font-weight:700;letter-spacing:.5px;
+          padding:6px 10px 6px;border-bottom:1px solid var(--border);
+          background:#dceefa;border-radius:8px 8px 0 0;margin-bottom:0;
+          position:sticky;top:0;z-index:2;
+        }
+        .col-dist,.col-name,.col-type,.col-hours,.col-rating,.col-count,.col-addr{font-size:12px;color:#6a85a0;}
+        .col-dist{white-space:nowrap;}
+        .col-name{font-weight:700;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+        .col-type,.col-hours,.col-addr{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+        .col-rating,.col-count{text-align:right;}
+        .col-map{display:flex;justify-content:flex-end;}
+        /* Rating */
+        .rating-wrap{display:flex;align-items:center;gap:3px;white-space:nowrap;justify-content:flex-end;}
+        .stars{font-size:10px;letter-spacing:-1px;}
+        .sf{color:var(--orange);} .sh{color:var(--orange);opacity:.5;} .se{color:var(--border);}
+        .rating-num{font-size:12px;color:#e8c99a;font-weight:700;}
+        .rating-count{font-size:10px;color:var(--muted);}
+        .rating-na{font-size:10px;color:var(--dim);}
+        .btn-map{background:var(--blue);color:#fff;font-size:11px;border-radius:20px;padding:0 9px;height:20px;padding-bottom:2px;border:none;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;letter-spacing:1px;transition:background .2s;font-family:var(--f);}
+        .btn-map:hover{background:#1a8fc7;}
+        /* Map picker */
+        .map-toggle-btn{width:100%;padding:10px 14px;border-radius:10px;border:1px solid var(--border);background:#fff;color:var(--blue);font-size:13px;font-weight:600;cursor:pointer;text-align:left;transition:all .2s;}
+        .map-toggle-btn:hover{border-color:var(--blue);background:#ebf7ff;}
+        .map-picker-wrap{display:flex;flex-direction:column;gap:6px;}
+        .map-canvas{width:100%;height:340px;border-radius:10px;overflow:hidden;border:none;}
+        .map-label{font-size:12px;color:#3a7ab8;font-weight:600;padding:2px 0;}
+        .map-bottom-row{display:flex;align-items:center;justify-content:space-between;gap:8px;}
+        .map-bottom-row .map-label{flex:1;margin:0;}
+        .loc-row{display:flex;align-items:center;gap:8px;}
+        .loc-current{display:flex;align-items:center;gap:6px;font-size:12px;color:var(--text);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:180px;}
+        .loc-or{font-size:13px;color:var(--muted);font-weight:500;flex-shrink:0;}
+        .map-canvas-wrap{position:relative;border-radius:10px;overflow:hidden;border:1px solid var(--border);}
+        .gps-fab{position:absolute;right:10px;bottom:10px;width:34px;height:34px;border-radius:50%;background:#fff;border:1px solid rgba(0,0,0,.12);box-shadow:0 2px 6px rgba(0,0,0,.15);cursor:pointer;display:flex;align-items:center;justify-content:center;z-index:1000;}
+        .leaflet-control-attribution{font-size:8px!important;opacity:0.4!important;background:rgba(255,255,255,0.6)!important;padding:1px 4px!important;}
+        .leaflet-control-attribution a{color:#888!important;}
+        .map-gps-btn{padding:5px 12px;border-radius:8px;border:1px solid var(--border);background:#fff;color:var(--blue);font-size:12px;cursor:pointer;white-space:nowrap;transition:all .2s;}
+        .map-gps-btn:hover{border-color:var(--blue);background:#ebf7ff;}
+        .leaflet-container{font-family:var(--f);}
+        /* Empty/loading */
+        .empty-state{text-align:center;padding:56px 20px;}
+        .empty-icon{font-size:42px;margin-bottom:14px;opacity:.35;}
+        .empty-title{font-size:17px;font-weight:700;color:#1478c4;margin-bottom:8px;}
+        .empty-desc{font-size:12px;color:#7a9ab8;line-height:1.9;white-space:pre-line;}
+        .loading-state{text-align:center;padding:56px 20px;}
+        .loading-dots{display:flex;justify-content:center;gap:7px;margin-bottom:18px;}
+        .dot{width:7px;height:7px;border-radius:50%;background:var(--blue);animation:bounce 1.2s ease-in-out infinite;}
+        .dot:nth-child(2){animation-delay:.2s} .dot:nth-child(3){animation-delay:.4s}
+        @keyframes bounce{0%,80%,100%{transform:scale(.5);opacity:.2}40%{transform:scale(1);opacity:1}}
+        .loading-text{font-size:12px;color:#5a90c0;letter-spacing:2px;}
+        .error-box{margin:12px 14px;padding:12px 14px;background:rgba(220,80,80,.06);border:1px solid rgba(220,80,80,.2);border-radius:10px;color:#c04040;font-size:13px;text-align:center;line-height:1.8;}
+      `}</style>
+
+      <div className="app">
+        <div className="header">
+          <div className="header-inner">
+            <div className="header-top">
+              <svg width="32" height="32" viewBox="0 0 80 80" style={{flexShrink:0}}>
+                <circle cx="40" cy="40" r="38" fill="#1e9fdf"/>
+                <path d="M40 12 C28 12 20 21 20 31 C20 44 40 64 40 64 C40 64 60 44 60 31 C60 21 52 12 40 12Z" fill="white"/>
+                <path d="M27 30 Q27 42 40 42 Q53 42 53 30" stroke="#1e9fdf" strokeWidth="3" fill="none" strokeLinecap="round"/>
+                <line x1="27" y1="30" x2="53" y2="30" stroke="#1e9fdf" strokeWidth="3" strokeLinecap="round"/>
+                <line x1="40" y1="42" x2="40" y2="46" stroke="#1e9fdf" strokeWidth="2.5" strokeLinecap="round"/>
+                <path d="M34 25 Q36 22 34 19" stroke="#1e9fdf" strokeWidth="2" fill="none" strokeLinecap="round"/>
+                <path d="M40 24 Q42 21 40 18" stroke="#1e9fdf" strokeWidth="2" fill="none" strokeLinecap="round"/>
+                <path d="M46 25 Q48 22 46 19" stroke="#1e9fdf" strokeWidth="2" fill="none" strokeLinecap="round"/>
+              </svg>
+              <div style={{display:"flex",alignItems:"flex-end",gap:10}}>
+                <span className="header-title">feed me</span>
+                <span className="header-sub"><span style={{fontStyle:"normal"}}>／</span>懂吃</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div className="controls">
+          {/* API Key */}
+          <div style={{display:"flex",alignItems:"center",justifyContent:"space-between",padding:"4px 0"}}>
+            <span style={{fontSize:12,color:"var(--muted)",cursor:"pointer"}} onClick={()=>setShowKeyInput(v=>!v)}>
+              {apiKey?"🔑 Google 模式（已儲存）":"🔑 輸入 Google API 金鑰（選填）"}
+            </span>
+            {apiKey&&<span style={{fontSize:12,color:"#e8a020"}}>⭐ {MIN_RATING} +</span>}
+            {!apiKey&&<span style={{fontSize:11,color:"var(--dim)"}}>OSM 免費模式</span>}
+          </div>
+          {showKeyInput&&(
+            <div style={{display:"flex",flexDirection:"column",gap:8}}>
+              <div className="row2">
+                <input className="flex-input" style={{fontSize:12}} placeholder="貼上 API 金鑰（AIza...）"
+                  value={apiKeyInput} onChange={e=>setApiKeyInput(e.target.value)}
+                  onKeyDown={e=>e.key==="Enter"&&handleConfirmKey()}/>
+                <button className="btn-go" style={{fontSize:12,padding:"10px 12px"}} onClick={handleConfirmKey}>儲存</button>
+                {apiKey&&<button className="btn-go" style={{fontSize:12,padding:"10px 12px",background:"#fee",color:"#c44",borderColor:"#fcc"}} onClick={handleClearKey}>清除</button>}
+              </div>
+              <div className="api-hint">
+                需啟用：<strong>Places API (New)</strong> · <strong>Geocoding API</strong><br/>
+                <a href="https://console.cloud.google.com/apis/library/places-backend.googleapis.com" target="_blank">啟用 Places API →</a>
+                &nbsp;｜&nbsp;
+                <a href="https://console.cloud.google.com/apis/library/geocoding-backend.googleapis.com" target="_blank">啟用 Geocoding API →</a>
+              </div>
+            </div>
+          )}
+
+          {/* Type selector */}
+          <div className="type-selector">
+            <div className="type-selector-header">
+              <button className="map-toggle-btn" style={{flex:1,textAlign:"left",padding:"6px 10px",fontSize:12,fontWeight:600}} onClick={()=>setTypeOpen(v=>!v)}>
+                {typeOpen?"▲ 收合類型篩選":"▼ 類型篩選"+(selectedTypes.size<ALL_TYPES.length?" · 已選 "+selectedTypes.size+"/"+ALL_TYPES.length+" 種":"")}
+              </button>
+            </div>
+            {typeOpen&&(<>
+              <div className="type-selector-header">
+                <span className="row-label">類型篩選</span>
+                <button className="type-ctrl-btn" style={{opacity:searchText?0.4:1,pointerEvents:searchText?"none":"auto"}} onClick={handleSelectAll}>全選</button>
+                <button className="type-ctrl-btn" style={{opacity:searchText?0.4:1,pointerEvents:searchText?"none":"auto"}} onClick={handleClearAll}>清除</button>
+                <span className="type-count">{selectedTypes.size}/{ALL_TYPES.length}</span>
+              </div>
+              {TYPE_GROUPS.map(g=>(
+                <div key={g.group} className="type-group">
+                  <span className="type-group-label">{g.group}</span>
+                  <div className="type-chips">
+                    {g.items.map(item=>(
+                      <button key={item.id}
+                        className={`type-chip ${selectedTypes.has(item.id)?"type-chip-on":""}`} style={{opacity:searchText?0.4:1,pointerEvents:searchText?"none":"auto"}}
+                        onClick={()=>handleTypeToggle(item.id)}>
+                        {item.label}
+                      </button>
+                    ))}
+                  </div>
+                </div>
+              ))}
+              {/* Keyword search chip */}
+              <div style={{padding:"8px 10px 6px",borderTop:"1px solid var(--border)",marginTop:4,display:"flex",alignItems:"center",gap:8}}>
+                <span style={{fontSize:13,color:"var(--muted)",fontWeight:500,flexShrink:0}}>or</span>
+                <div style={{flex:1,display:"flex",alignItems:"center",background:"#fff",border:"1px solid",borderColor:searchText?"var(--blue)":"var(--border)",borderRadius:18,padding:"4px 12px",gap:6}}>
+                  <span style={{fontSize:12,color:"var(--muted)"}}>🔍</span>
+                  <input style={{flex:1,border:"none",outline:"none",fontSize:12,color:"var(--text)",background:"none"}} placeholder="關鍵字，例：鹹酥雞、麵、滷味…" value={searchText} onChange={e=>setSearchText(e.target.value)}/>
+                  {searchText&&<button style={{border:"none",background:"none",cursor:"pointer",color:"var(--muted)",fontSize:14,lineHeight:1,padding:0}} onClick={()=>setSearchText("")}>×</button>}
+                </div>
+              </div>
+            </>)}
+          </div>
+
+          {/* Date */}
+          <div style={{display:"flex",alignItems:"center",gap:10}}>
+              <span className="row-label" style={{whiteSpace:"nowrap"}}>📅 日期</span>
+              <div className="date-click-wrap" onClick={()=>document.getElementById('datepicker').showPicker&&document.getElementById('datepicker').showPicker()}>
+                <span className="date-display">{timeFilter.date}</span>
+                <input id="datepicker" type="date" className="date-input-hidden"
+                  value={timeFilter.date}
+                  onChange={e=>setTimeFilter(f=>({...f,date:e.target.value}))}/>
+              </div>
+              <label className="open-toggle">
+                <input type="checkbox" checked={timeFilter.showOpen}
+                  onChange={e=>setTimeFilter(f=>({...f,showOpen:e.target.checked}))}/>
+                <span>只顯示當日營業</span>
+              </label>
+            </div>
+
+          {/* Radius */}
+          <div style={{display:"flex",flexDirection:"column",gap:10}}>
+            <div style={{display:"flex",alignItems:"center",gap:10}}>
+            <span style={{fontSize:13,fontWeight:700,color:"#2a85c0",whiteSpace:"nowrap"}}>搜尋範圍</span>
+            <div className="chip-group">
+              {[[300,"300m"],[500,"500m"],[1000,"1km"],[1500,"1.5km"],[2000,"2km"]].map(([r,label])=>(
+                <button key={r} className={`chip ${radius===r?"active":""}`} onClick={()=>handleRadiusChange(r)}>{label}</button>
+              ))}
+            </div>
+            </div>
+          </div>
+
+          {/* Map / location picker */}
+          {bgStatus&&<div className="bg-note"><span className="spinner"/>{bgStatus}</div>}
+          <div className="map-picker-wrap">
+            {/* Location row */}
+            <div className="loc-row">
+              <div className="loc-current">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                  <path d="M21 3L3 10l7 3.5L13.5 21 21 3z" fill="#1e9fdf"/>
+                  <path d="M21 3L10 13.5 13.5 21 21 3z" fill="#1e9fdf" opacity="0.35"/>
+                </svg>
+                <span>{mpLabel||"尚未定位"}</span>
+              </div>
+              <span className="loc-or">or</span>
+              <input className="flex-input" style={{flex:1,fontSize:12}} placeholder="輸入地址、地標或釘選下方地圖"
+                value={mpAddr} onChange={e=>setMpAddr(e.target.value)}
+                onKeyDown={e=>e.key==="Enter"&&mpJump()}/>
+              <button className="btn-go" style={{width:32,height:32,padding:0,display:"flex",alignItems:"center",justifyContent:"center",borderRadius:8,flexShrink:0}} onClick={mpJump} disabled={geocoding}>
+                {geocoding?"…":<svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                  <path d="M13 3v5a2 2 0 01-2 2H3" stroke="white" strokeWidth="1.8" strokeLinecap="round"/>
+                  <path d="M6 7l-3 3 3 3" stroke="white" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>}
+              </button>
+            </div>
+            {/* Map toggle */}
+            <button className="map-toggle-btn" onClick={()=>{ setMapOpen(v=>{ const next=!v; if(next) setTimeout(()=>{ if(mapRef.current) mapRef.current.invalidateSize(); },50); return next; }); }}>
+              {mapOpen?"▲ 收合地圖":"▼ 展開地圖"}
+            </button>
+            {/* Map */}
+            <div style={{display:mapOpen?"flex":"none",flexDirection:"column",gap:6}}>
+              <div className="map-canvas-wrap">
+                <div ref={mapDiv} className="map-canvas"></div>
+                <button className="gps-fab" onClick={()=>handleLocate(false)} disabled={locating} title="重新定位">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+                    <path d="M21 3L3 10l7 3.5L13.5 21 21 3z" fill="#4285F4"/>
+                    <path d="M21 3L10 13.5 13.5 21 21 3z" fill="#aec8f8"/>
+                  </svg>
+                </button>
+              </div>
+              {/* Confirm / re-search */}
+              <button className="locate-btn" style={{fontSize:13,padding:"10px",letterSpacing:"1px"}}
+                onClick={mpConfirm} disabled={!mpLL||loading}>
+                {loading?"搜尋中…":location?"🔍 套用條件重新搜尋":"✓ 確認位置並開始搜尋"}
+              </button>
+            </div>
+          </div>
+
+          {/* Sort + loc badge */}
+
+        </div>
+
+        {error&&(
+          <div className="error-box">
+            ⚠ {error}
+            {error.includes("Places API")&&<><br/><small>請確認已啟用「<strong>Places API (New)</strong>」新版</small></>}
+          </div>
+        )}
+
+        {loading?(
+          <div className="loading-state">
+            <div className="loading-dots"><div className="dot"/><div className="dot"/><div className="dot"/></div>
+            <div className="loading-text">搜尋附近美食中…</div>
+          </div>
+        ):!location?(
+          <div className="empty-state">
+            <div className="empty-icon">🗺</div>
+            <div className="empty-title">尚未設定位置</div>
+            <div className="empty-desc">選擇自動定位，或手動輸入地址以開始搜尋</div>
+          </div>
+        ):filtered.length===0&&places.length>0?(
+          <div className="empty-state">
+            <div className="empty-icon">🔍</div>
+            <div className="empty-title">沒有符合條件的店家</div>
+            <div className="empty-desc">{`共找到 ${places.length} 間，但全部被篩選條件過濾\n試試調整評分門檻、時段或搜尋範圍`}</div>
+          </div>
+        ):filtered.length===0?(
+          <div className="empty-state">
+            <div className="empty-icon">🍽</div>
+            <div className="empty-title">找不到店家</div>
+            <div className="empty-desc">試試擴大搜尋範圍或切換類型</div>
+          </div>
+        ):(
+          <>
+            <div className="results-header">
+              <span className="results-label">直線距離 {radius}m 內推薦店家</span>
+              <select className="sort-select" style={{marginLeft:"auto",fontSize:12,padding:"4px 8px"}} value={sortBy} onChange={e=>setSortBy(e.target.value)}>
+                <option value="distance">距離由近到遠</option>
+                <option value="rating">評分由高到低</option>
+                <option value="ratingCount">評論數由多到少</option>
+              </select>
+            </div>
+            <div className="place-list">
+              {/* Header row */}
+              <div className="place-row place-row-header">
+                <span className="col-dist">距離</span>
+                <span className="col-name">店家名稱</span>
+                <span className="col-type">類型</span>
+                <span className="col-hours">營業時間</span>
+                <span className="col-rating">評分</span>
+                <span className="col-count">評論數</span>
+                <span className="col-addr">地址</span>
+                <span className="col-map"></span>
+              </div>
+              {filtered.map((p,i)=>{
+                const todayHours = isGoogleMode ? getHoursForDate(p, timeFilter.date) : null;
+                const ratingStr = p.rating!=null ? p.rating.toFixed(1) : "—";
+                const countStr = p.ratingCount!=null
+                  ? (p.ratingCount>=1000 ? `${(p.ratingCount/1000).toFixed(1)}k` : String(p.ratingCount))
+                  : "—";
+                return(
+                  <div key={p.id} className="place-card">
+                    <div className="card-name">{p.name}</div>
+                    <div className="card-meta">
+                      <span className="card-tag">{p.typeLabel}{p.cuisine?` · ${p.cuisine}`:""}</span>
+                      {p.rating!=null&&<span className="card-rating">★ {ratingStr}</span>}
+                      {p.ratingCount!=null&&<span className="card-count">{countStr} 則評論</span>}
+                    </div>
+                    {todayHours&&<div className="card-hours">🕐 {todayHours}</div>}
+                    <div className="card-bottom">
+                      <span className="card-dist">📍 {Math.round(p.distance)} m</span>
+                      <a className="btn-map"
+                        href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(p.name)}&query_place_id=${p.placeId||''}`}
+                        target="_blank" rel="noopener noreferrer">map</a>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          </>
+        )}
+      </div>
+    </>);
+  }
+
+  ReactDOM.createRoot(document.getElementById("root")).render(<App/>);
+</script>
+</body>
+</html>
